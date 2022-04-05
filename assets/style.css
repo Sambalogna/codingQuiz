@@ -1,0 +1,21 @@
+body {
+    background-color: #50c878 ;
+}
+#quixBox {
+    display: flex;
+}
+#start {
+    margin:25% 45%;
+    white-space: nowrap;
+}
+.question {
+    margin:25% 45%;
+    white-space: nowrap;
+
+}
+#postGame {
+    margin: 25% 45%;
+    font-family: 'Beau Rivage', cursive;
+    font-size: 100px;
+    color: aliceblue;
+}
