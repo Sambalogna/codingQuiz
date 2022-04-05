@@ -5,16 +5,20 @@ body {
     display: flex;
 }
 #start {
-    margin:25% 45%;
+    margin:15% 45%;
     white-space: nowrap;
 }
-.question {
-    margin:25% 45%;
+.questionBox {
+    margin: 5% 10%;
+    background-color: #444;
+}
+.submit {
+    margin:2% 10%;
     white-space: nowrap;
 
 }
 #postGame {
-    margin: 25% 45%;
+    margin: 20% 45%;
     font-family: 'Beau Rivage', cursive;
     font-size: 100px;
     color: aliceblue;
