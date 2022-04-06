@@ -27,13 +27,12 @@ var Q5 = '<div class="questionBox" id = "qBox5">'+'<button class="submit" id="Q5
 '<label for="answer3">C. Either or.</label>' + '<br>'+'</div>'
 var congrats = '<div id="postGame" >' + 'Fin' + '</div>'
 
-
 //click start to enter q1
 function webIntro() {
-    timerStart();
+    
     document.getElementById('quizBox').innerHTML += Q1;
     document.getElementById('start').style.display = "none";
-    
+    timerStart();
 }
 
 //click submit q1 to get to q2
@@ -84,6 +83,7 @@ function checkQ1() {
     }
     else{
         console.log('you got the answer wrong bud')
+        timeClock = timeClock-10;
     }
 }
 //check Q2 for correct answer
@@ -93,6 +93,7 @@ function checkQ2() {
     }
     else{
         console.log('you got the answer wrong bud')
+        timeClock = timeClock-10;
     }
 }
 //check Q3 for correct answer
@@ -102,6 +103,7 @@ function checkQ3() {
     }
     else{
         console.log('you got the answer wrong bud')
+        timeClock = timeClock-10;
     }
 }
 //check Q4 for correct answer
@@ -111,6 +113,7 @@ function checkQ4() {
     }
     else{
         console.log('you got the answer wrong bud')
+        timeClock = timeClock-10;
     }
 }
 //check Q5 for correct answer
@@ -120,12 +123,14 @@ function checkQ5() {
     }
     else{
         console.log('you got the answer wrong bud')
+        timeClock = timeClock-10;
     }
 }
 var timerZone = document.getElementById('countdown');
 //timer 
+var timeClock = 120;
 function timerStart(){
-    var timeClock = 120;
+    
     var timeInterval = setInterval(function () {
     if(timeClock > 1){
         timerZone.textContent =  timeClock + ' seconds remaining'
@@ -141,5 +146,5 @@ function timerStart(){
 }
 
 //highscore page
-
+scoreCount = 0;
 
