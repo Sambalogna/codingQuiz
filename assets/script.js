@@ -27,10 +27,10 @@ var Q5 = '<div class="questionBox" id = "qBox5">'+'<button class="submit" id="Q5
 '<label for="answer3">C. Either or.</label>' + '<br>'+'</div>'
 var congrats = '<div id="postGame" >' + 'Fin' + '</div>'
 
-timerStart();
+
 //click start to enter q1
 function webIntro() {
-    
+    timerStart();
     document.getElementById('quizBox').innerHTML += Q1;
     document.getElementById('start').style.display = "none";
     
@@ -125,10 +125,10 @@ function checkQ5() {
 var timerZone = document.getElementById('countdown');
 //timer 
 function timerStart(){
-    var timeClock = 5;
+    var timeClock = 120;
     var timeInterval = setInterval(function () {
     if(timeClock > 1){
-        timerZone.textContent = timeClock + ' seconds remaining'
+        timerZone.textContent =  timeClock + ' seconds remaining'
         timeClock--;
     }else if (timeClock === 1){
         timerZone.textContent = timeClock + ' second remaining'
