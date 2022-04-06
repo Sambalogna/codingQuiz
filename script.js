@@ -72,6 +72,7 @@ function completeQuiz() {
 //restarting the game from end 
 function restartTheQuiz() {
     document.querySelector('section').remove();
+    document.querySelector('body').innerHTML += '<p id="countdown"></p>'
     document.querySelector('body').innerHTML += '<section id="quizBox">' + 
     '<button type="button" id="start" onclick="webIntro()">Start Quiz</button>' + '</section>'
 }
@@ -80,9 +81,11 @@ function restartTheQuiz() {
 function checkQ1() {
     if(document.getElementById('Q1A3').checked === true) {
         console.log('success')
+        scoreCount += 5
+        getScore();
     }
     else{
-        console.log('you got the answer wrong bud')
+        console.log('you got the answer wrong')
         timeClock = timeClock-10;
     }
 }
@@ -90,9 +93,12 @@ function checkQ1() {
 function checkQ2() {
     if(document.getElementById('Q2A2').checked === true) {
         console.log('success')
+        scoreCount += 5
+        removeOldScore();
+        getScore();
     }
     else{
-        console.log('you got the answer wrong bud')
+        console.log('you got the answer wrong')
         timeClock = timeClock-10;
     }
 }
@@ -100,9 +106,12 @@ function checkQ2() {
 function checkQ3() {
     if(document.getElementById('Q3A1').checked === true) {
         console.log('success')
+        scoreCount += 5
+        removeOldScore();
+        getScore();
     }
     else{
-        console.log('you got the answer wrong bud')
+        console.log('you got the answer wrong')
         timeClock = timeClock-10;
     }
 }
@@ -110,9 +119,12 @@ function checkQ3() {
 function checkQ4() {
     if(document.getElementById('Q4A2').checked === true) {
         console.log('success')
+        scoreCount += 5
+        removeOldScore();
+        getScore();
     }
     else{
-        console.log('you got the answer wrong bud')
+        console.log('you got the answer wrong')
         timeClock = timeClock-10;
     }
 }
@@ -120,9 +132,12 @@ function checkQ4() {
 function checkQ5() {
     if(document.getElementById('Q5A3').checked === true) {
         console.log('success')
+        scoreCount += 5
+        removeOldScore();
+        getScore();
     }
     else{
-        console.log('you got the answer wrong bud')
+        console.log('you got the answer wrong')
         timeClock = timeClock-10;
     }
 }
@@ -149,4 +164,9 @@ function stopTimer() {
 }
 //highscore page
 scoreCount = 0;
-
+function removeOldScore(){
+    document.getElementById('score').remove();
+}
+function getScore() {
+document.getElementById('scoreboard').innerHTML += '<div id="score">' + scoreCount + '</div>'
+}
