@@ -27,11 +27,13 @@ var Q5 = '<div class="questionBox" id = "qBox5">'+'<button class="submit" id="Q5
 '<label for="answer3">C. Either or.</label>' + '<br>'+'</div>'
 var congrats = '<div id="postGame" >' + 'Fin' + '</div>'
 
-
+timerStart();
 //click start to enter q1
 function webIntro() {
+    
     document.getElementById('quizBox').innerHTML += Q1;
     document.getElementById('start').style.display = "none";
+    
 }
 
 //click submit q1 to get to q2
@@ -66,9 +68,14 @@ function questionfour() {
 function completeQuiz() {
     checkQ5();
     document.getElementById('qBox5').style.display = 'none';
-    document.getElementById('quizBox').innerHTML += congrats
+    document.getElementById('quizBox').innerHTML += '<button id="restart" onclick="restartTheQuiz()">Restart</button>'+congrats 
 }
-
+//restarting the game from end 
+function restartTheQuiz() {
+    document.querySelector('section').remove();
+    document.querySelector('body').innerHTML += '<section id="quizBox">' +
+    '<button type="button" id="start" onclick="webIntro()">Start Quiz</button>' + '</section>'
+}
 //Next section runs checks
 //check Q1 for correct answer
 function checkQ1() {
@@ -115,6 +122,24 @@ function checkQ5() {
         console.log('you got the answer wrong bud')
     }
 }
-//This displays start button again 
-//document.getElementById('start').style.display = 'block'
+var timerZone = document.getElementById('countdown');
+//timer 
+function timerStart(){
+    var timeClock = 5;
+    var timeInterval = setInterval(function () {
+    if(timeClock > 1){
+        timerZone.textContent = timeClock + ' seconds remaining'
+        timeClock--;
+    }else if (timeClock === 1){
+        timerZone.textContent = timeClock + ' second remaining'
+        timeClock--;
+    }else{
+        timerZone.textContent = '0 seconds remain'
+        clearInterval(timeInterval);
+    }
+}, 1000);
+}
+
+//highscore page
+
 
