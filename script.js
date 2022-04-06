@@ -20,7 +20,7 @@ var Q4 = '<div class="questionBox" id = "qBox4">'+'<button class="submit" id="Q4
 '<label for="answer1">A. .shift() & .includes()</label>' + '<br>' + '<input type="checkbox" id="Q4A2">' +
 '<label for="answer2">B. .join() & .split()</label>' + '<br>' + '<input type="checkbox" id="Q4A3">' +
 '<label for="answer3">C. .unshift() & .foreach()</label>' + '<br>'+'</div>'
-var Q5 = '<div class="questionBox" id = "qBox5">'+'<button class="submit" id="Q5" onclick="completeQuiz()">Submit Q5</button>'+
+var Q5 = '<div class="questionBox" id = "qBox5">'+'<button class="submit" id="Q5" onclick="completeQuiz(); stopTimer();">Submit Q5</button>'+
 '<p class="question">Are booleans true or false?</p>'+'<input type="checkbox" id="Q5A1">'+
 '<label for="answer1">A. True</label>' + '<br>' + '<input type="checkbox" id="Q5A2">' +
 '<label for="answer2">B. False</label>' + '<br>' + '<input type="checkbox" id="Q5A3">' +
@@ -72,7 +72,7 @@ function completeQuiz() {
 //restarting the game from end 
 function restartTheQuiz() {
     document.querySelector('section').remove();
-    document.querySelector('body').innerHTML += '<section id="quizBox">' +
+    document.querySelector('body').innerHTML += '<section id="quizBox">' + 
     '<button type="button" id="start" onclick="webIntro()">Start Quiz</button>' + '</section>'
 }
 //Next section runs checks
@@ -144,7 +144,9 @@ function timerStart(){
     }
 }, 1000);
 }
-
+function stopTimer() {
+    document.getElementById('countdown').remove()
+}
 //highscore page
 scoreCount = 0;
 
