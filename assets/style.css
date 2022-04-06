@@ -1,8 +1,8 @@
 body {
     background-color: #50c878 ;
 }
-#quixBox {
-    display: flex;
+#quizBox {
+    
 }
 #start {
     margin:15% 45%;
@@ -10,13 +10,18 @@ body {
 }
 .questionBox {
     margin: 5% 10%;
+    padding-left: 2%;
+    padding-bottom: 2%;
     background-color: #444;
+    color: aliceblue;
+    border-radius: 20px;
 }
 .submit {
-    margin:2% 10%;
+    margin:2% 5%;
     white-space: nowrap;
 
 }
+
 #postGame {
     margin: 20% 45%;
     font-family: 'Beau Rivage', cursive;
