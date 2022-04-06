@@ -20,6 +20,7 @@ var Q4 = '<div class="questionBox" id = "qBox4">'+'<button class="submit" id="Q4
 '<label for="answer1">A. .shift() & .includes()</label>' + '<br>' + '<input type="checkbox" id="Q4A2">' +
 '<label for="answer2">B. .join() & .split()</label>' + '<br>' + '<input type="checkbox" id="Q4A3">' +
 '<label for="answer3">C. .unshift() & .foreach()</label>' + '<br>'+'</div>'
+//this one has an additional function to stop timer
 var Q5 = '<div class="questionBox" id = "qBox5">'+'<button class="submit" id="Q5" onclick="completeQuiz(); stopTimer();">Submit Q5</button>'+
 '<p class="question">Are booleans true or false?</p>'+'<input type="checkbox" id="Q5A1">'+
 '<label for="answer1">A. True</label>' + '<br>' + '<input type="checkbox" id="Q5A2">' +
@@ -159,8 +160,15 @@ function timerStart(){
     }
 }, 1000);
 }
+//stops timer
 function stopTimer() {
+    timeClock = timeClock
     document.getElementById('countdown').remove()
+    timeLeft();
+}
+//prints timeLeft
+function timeLeft() {
+    document.getElementById('scoreboard').innerHTML += ' '+scoreCount + ' Time Left: '+ timeClock
 }
 //highscore page
 scoreCount = 0;
