@@ -80,11 +80,15 @@ function restartTheQuiz() {
 //Next section runs checks
 //check Q1 for correct answer
 function checkQ1() {
-    if(document.getElementById('Q1A3').checked === true) {
+    if(document.getElementById('Q1A3').checked === true && document.getElementById('Q1A2').checked != true && document.getElementById('Q1A1').checked != true) {
         console.log('success')
         scoreCount += 5
         getScore();
     }
+    // else if(document.getElementById('Q1A2').checked === true) {
+    //     console.log('you got the answer wrong')
+    //     timeClock = timeClock-10;
+    // }
     else{
         console.log('you got the answer wrong')
         timeClock = timeClock-10;
@@ -92,7 +96,7 @@ function checkQ1() {
 }
 //check Q2 for correct answer
 function checkQ2() {
-    if(document.getElementById('Q2A2').checked === true) {
+    if(document.getElementById('Q2A2').checked === true&& document.getElementById('Q2A1').checked != true && document.getElementById('Q2A3').checked != true) {
         console.log('success')
         scoreCount += 5
         removeOldScore();
@@ -105,7 +109,7 @@ function checkQ2() {
 }
 //check Q3 for correct answer
 function checkQ3() {
-    if(document.getElementById('Q3A1').checked === true) {
+    if(document.getElementById('Q3A1').checked === true && document.getElementById('Q3A2').checked != true && document.getElementById('Q3A3').checked != true) {
         console.log('success')
         scoreCount += 5
         removeOldScore();
@@ -118,7 +122,7 @@ function checkQ3() {
 }
 //check Q4 for correct answer
 function checkQ4() {
-    if(document.getElementById('Q4A2').checked === true) {
+    if(document.getElementById('Q4A2').checked === true && document.getElementById('Q4A1').checked != true && document.getElementById('Q4A3').checked != true) {
         console.log('success')
         scoreCount += 5
         removeOldScore();
@@ -131,7 +135,7 @@ function checkQ4() {
 }
 //check Q5 for correct answer
 function checkQ5() {
-    if(document.getElementById('Q5A3').checked === true) {
+    if(document.getElementById('Q5A3').checked === true && document.getElementById('Q5A2').checked != true && document.getElementById('Q5A1').checked != true) {
         console.log('success')
         scoreCount += 5
         removeOldScore();
@@ -168,7 +172,7 @@ function stopTimer() {
 }
 //prints timeLeft
 function timeLeft() {
-    document.getElementById('scoreboard').innerHTML += ' '+scoreCount + ' Time Left: '+ timeClock
+    document.getElementById('scoreboard').innerHTML += ' '+scoreCount + ' Time Left: '+ timeClock  
 }
 //highscore page
 scoreCount = 0;
@@ -178,3 +182,12 @@ function removeOldScore(){
 function getScore() {
 document.getElementById('scoreboard').innerHTML += '<div id="score">' + scoreCount + '</div>'
 }
+// attempting local storage
+// var highscore;
+// function storeScore() {
+//     highscore = localStorage.getItem(scoreCount)
+// }
+// function renderScore() {
+//     localStorage.setItem(highscore)
+//     document.body.innerHTML = highscore
+// }
